@@ -1,0 +1,31 @@
+name: Publish strongest candidate GitHub release
+
+on:
+  push:
+    branches:
+      - automation/publish-strongest-candidate-release
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out release documentation
+        uses: actions/checkout@v4
+      - name: Create the versioned GitHub Release if not present
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: 92f4614d37559fb6e521e9da43bcd68b55a156e3
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view strongest-candidate >/dev/null 2>&1; then
+            echo "Release already exists. Nothing to do."
+            exit 0
+          fi
+          gh release create strongest-candidate \
+            --target "$TARGET_SHA" \
+            --title "strongest candidate" \
+            --notes-file docs/22-strongest-candidate-release.md
