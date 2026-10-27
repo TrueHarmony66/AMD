@@ -16,13 +16,13 @@ A documented research project studying **GBPUSD H1 consolidation → close break
 
 The **current primary research variant is Detector C**; retain A and B as independently evaluated alternative branches, not discarded prototypes. 717 is a detector-associated count; some entry opportunities can overlap across detectors. None of the percentages is a trade win rate.
 
-## Latest milestone — strongest candidate (original AMD T1 restored)
+## Latest milestone — strongest candidate + EURUSD 2021 holdout
 
-The original **Detector C + Scenario A/B + confirmed FVG midpoint + SL2 + H4 liquidity M0** workspace is active again according to the restoration verification. The original **308 GBPUSD source events** and Phase 8.3 **1,848 model/event records** are preserved; the regression suite reported **PASS**. The experimental 2,477-candidate portable reconstruction was isolated rather than installed as our active algorithm.
+The original **Detector C + Scenario A/B + confirmed FVG midpoint + SL2 + H4 liquidity M0** workspace is active again. The original **308 GBPUSD source events**, Phase 8.3 **1,848 model/event records**, and original 1,099-event midpoint scanner / 3,930-row SL/TP producer have now been **reproduced using original source-backed code**, according to local Codex reports. The previously failed experimental 2,477-candidate portable reconstruction remains inactive. **EURUSD 2021** then produced a positive untouched-instrument historical M0 test: **145 accepted trades; +$700.38 modeled net; 83.45% net WR; PF 2.7165; +0.2068 net R; $79.53 maximum balance drawdown.** Frozen costs/0.5% risk, no EURUSD optimization. These are *reported research simulations*; the local source files, original trade ledgers and broker-specific proof are not included in this repository.
 
-**[Open release: strongest candidate](docs/22-strongest-candidate-release.md)** · [Local original-source manifest](docs/23-strongest-candidate-artifact-inventory.md) · [Illustrated strategy gallery](docs/15-visual-diagram-gallery.md)
+**[Release 1: strongest candidate](https://github.com/TrueHarmony66/AMD/releases/tag/strongest-candidate)** · [GBPUSD source reproduction](docs/24-recovered-gbp-source-chain.md) · [EURUSD 2021 holdout report](docs/25-eurusd-2021-m0-holdout.md) · [Local source manifest](docs/23-strongest-candidate-artifact-inventory.md) · [Illustrated strategy gallery](docs/15-visual-diagram-gallery.md)
 
-**Important:** the original components and historical replay were recovered, but exact regeneration of all 308 source events on new raw data is **not yet established**. All reported GBPUSD returns remain research simulations; EURUSD 2021 remains untested.
+**Important:** local GBPUSD parity and original ledger reproduction are now reported successful; EURUSD 2021 has been run as the first independent-instrument historical test. **Live performance, broker fill validity and full independent GitHub-only replication remain unestablished.**
 
 ## Previous research milestone — 27 October 2026
 

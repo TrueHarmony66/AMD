@@ -1,5 +1,7 @@
 # EURUSD 2021 frozen holdout — unrun: original signal generator unavailable
 
+> **HISTORICAL DOCUMENT — SUPERSEDED (27 October 2026).** This was the genuine blocker **before** the original tick scanner and SL/TP producers were recovered. The original source path was subsequently reproduced on GBPUSD, and EURUSD 2021 M0 was executed. See [original-code reproduction](24-recovered-gbp-source-chain.md) and [EURUSD results](25-eurusd-2021-m0-holdout.md). Do not cite the old "unrun" statement as current.
+
 ## Outcome
 
 **No EURUSD P&L, win rate or even a generated executable order ledger exists.** Holdout remains unused for strategy-performance selection. Do not infer cross-pair edge.
