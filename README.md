@@ -16,7 +16,15 @@ A documented research project studying **GBPUSD H1 consolidation → close break
 
 The **current primary research variant is Detector C**; retain A and B as independently evaluated alternative branches, not discarded prototypes. 717 is a detector-associated count; some entry opportunities can overlap across detectors. None of the percentages is a trade win rate.
 
-## Latest research milestone — 27 October 2026
+## Latest milestone — strongest candidate (original AMD T1 restored)
+
+The original **Detector C + Scenario A/B + confirmed FVG midpoint + SL2 + H4 liquidity M0** workspace is active again according to the restoration verification. The original **308 GBPUSD source events** and Phase 8.3 **1,848 model/event records** are preserved; the regression suite reported **PASS**. The experimental 2,477-candidate portable reconstruction was isolated rather than installed as our active algorithm.
+
+**[Open release: strongest candidate](docs/22-strongest-candidate-release.md)** · [Local original-source manifest](docs/23-strongest-candidate-artifact-inventory.md) · [Illustrated strategy gallery](docs/15-visual-diagram-gallery.md)
+
+**Important:** the original components and historical replay were recovered, but exact regeneration of all 308 source events on new raw data is **not yet established**. All reported GBPUSD returns remain research simulations; EURUSD 2021 remains untested.
+
+## Previous research milestone — 27 October 2026
 
 **Phase 8.3 full quote replay** was reported across **128,332,195 GBPUSD tick rows**, comparing frozen M0–M5. Original **M0 H4 full exit** retained the highest modeled five-year net profit (**+$1,340.29**, **PF 3.401**, **86.11% net WR**, **+0.1803R/trade**), but these remain **provisional research simulations**, not broker-verified or forward-tested returns. Frozen D1 runner models did not outperform M0 in modeled net dollars. The EURUSD 2021 one-year holdout remains **unrun** because the independently portable frozen Detector C/Scenario A-B/FVG signal generator has not been recovered or proven GBPUSD event-level equivalent.
 
