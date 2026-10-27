@@ -29,12 +29,23 @@ The **current primary research variant is Detector C**; retain A and B as indepe
 - [Data, timestamping and source coverage](docs/08-data-provenance.md)
 - [Limitations, integrity flags and false conclusions to avoid](docs/09-limitations.md)
 - [Reproduction requirements and local artifact manifest](docs/10-reproduction.md)
+- [**Visual diagram gallery — seven illustrated SVG trading examples**](docs/15-visual-diagram-gallery.md)
 - [Mermaid diagrams and annotated manual chart interpretations](docs/11-diagrams-and-examples.md)
 - [Open research questions, release gates and next steps](docs/12-open-questions.md)
 - [Migration checklist: unpublished local source, charts and ledgers](docs/13-artifact-migration.md)
 - [**Phase 6: modeled transaction costs, sizing and one-position portfolio (October 2026)**](docs/14-phase6-cost-portfolio.md)
 - [Phase 6 base-cost A/B/C SL2/H4 summary CSV](data/summary/phase6-base-sl2-h4.csv)
 - [Detector C SL2/H4 monthly trade counts, 2021-02 to 2025-12](data/summary/monthly-h4-sl2-trade-counts.csv)
+
+## Visual strategy diagrams
+
+The illustrated examples shown during development are available as **real SVG image files**, viewable directly in GitHub—not just text diagrams. They are deliberately schematic and do not represent price data.
+
+[![AMD T1 FVG midpoint entry schematic](docs/assets/02-three-candle-fvg-and-midpoint.svg)](docs/15-visual-diagram-gallery.md)
+
+[![H4 liquidity TP to Daily liquidity sweep schematic](docs/assets/04-h4-to-d1-liquidity-continuation.svg)](docs/15-visual-diagram-gallery.md)
+
+See the [full seven-image gallery](docs/15-visual-diagram-gallery.md), including Detector C wick sweeps, both stops, Scenario A/B, long/short quote sides and the 2R comparison illustration.
 
 ## Headline provisional 72h H4-liquidity results
 

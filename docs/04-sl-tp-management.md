@@ -1,5 +1,7 @@
 # Stop-loss and higher-timeframe liquidity take-profit
 
+**Illustrated examples:** [Two-stop comparison, exact H4-to-D1 wick targets and R-multiple schematic](15-visual-diagram-gallery.md).
+
 ## SL alternatives (paired experiment)
 
 The user marked an intermediate stop **between the distal FVG edge and a historically known liquidity sweep / swing extreme**. A second structural method places the stop **beyond the sweep extreme**, with a buffer.

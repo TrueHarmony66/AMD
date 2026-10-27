@@ -1,5 +1,7 @@
 # Diagrams, trade geometry and discretionary examples
 
+**New: [open the actual seven-image SVG diagram gallery](15-visual-diagram-gallery.md).** The gallery recreates the visual examples shown during development (range/sweep, FVG, SL1-vs-SL2, H4-to-D1 continuation, risk multiples, Scenario A/B and long/short exits) as directly rendered, repository-versioned vector files. The ASCII and Mermaid sketches below remain as lightweight supplemental documentation.
+
 These are **schematic illustrations** of the research rules, not screenshots of historical returns or a substitute for actual price-series annotations.
 
 ## Whole setup
