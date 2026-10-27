@@ -4,7 +4,7 @@ A documented research project studying **GBPUSD H1 consolidation → close break
 
 > **Research, not live-trading software or financial advice.** This repository records historical experimental evidence, provisional assumptions, defects uncovered, and unfinished validation. Positive gross backtests do **not** prove that any variant is robustly profitable after realistic costs or portfolio constraints.
 
-**Research status (27 October 2026):** all 1,099 corrected A/B/C midpoint-order records were scanned against historical GBPUSD ticks; 717 recorded correct-side price reaches. The subsequent SL×TP study found positive gross historical H4/SL2 results. **Phase 6** then simulated commissions, slippage, dynamic 0.5%-equity risk and one-position portfolios, reporting positive modeled net outcomes across A/B/C. However, swaps remain zero, commission/slippage are hypothetical, pending-order competition is incomplete, and the 2023 data gap is unresolved. Equity drawdown, broker-specific net returns, independent holdout and live performance are still unverified.
+**Earlier research status (Phase 6, 27 October 2026):** all 1,099 corrected A/B/C midpoint-order records were scanned against historical GBPUSD ticks; 717 recorded correct-side price reaches. The subsequent SL×TP study found positive gross historical H4/SL2 results. **Phase 6** then simulated commissions, slippage, dynamic 0.5%-equity risk and one-position portfolios, reporting positive modeled net outcomes across A/B/C. However, swaps remain zero, commission/slippage are hypothetical, pending-order competition is incomplete, and the 2023 data gap is unresolved. Equity drawdown, broker-specific net returns, independent holdout and live performance are still unverified.
 
 ## Three detection variants
 
@@ -15,6 +15,14 @@ A documented research project studying **GBPUSD H1 consolidation → close break
 | **C — defended levels** | Repeated reaction levels; isolated outlier wicks are sweeps, not automatically new boundaries | 1,705 H1; 819 H4 | 499 | 335 / 499 (67.1%) |
 
 The **current primary research variant is Detector C**; retain A and B as independently evaluated alternative branches, not discarded prototypes. 717 is a detector-associated count; some entry opportunities can overlap across detectors. None of the percentages is a trade win rate.
+
+## Latest research milestone — 27 October 2026
+
+**Phase 8.3 full quote replay** was reported across **128,332,195 GBPUSD tick rows**, comparing frozen M0–M5. Original **M0 H4 full exit** retained the highest modeled five-year net profit (**+$1,340.29**, **PF 3.401**, **86.11% net WR**, **+0.1803R/trade**), but these remain **provisional research simulations**, not broker-verified or forward-tested returns. Frozen D1 runner models did not outperform M0 in modeled net dollars. The EURUSD 2021 one-year holdout remains **unrun** because the independently portable frozen Detector C/Scenario A-B/FVG signal generator has not been recovered or proven GBPUSD event-level equivalent.
+
+**[Latest release notes](docs/20-release-notes-2026-10-27.md)** · [Phase 7 audited D1 study](docs/16-phase7-h4-d1-continuation-audit.md) · [Phase 8.3 model table](docs/18-phase8-3-full-tick-results.md) · [EURUSD portability blocker](docs/19-eurusd-2021-portability-blocker.md)
+
+The historic **Phase 6 $1,284.03** row below is retained as a separately scoped earlier simulation, **not** superseded or silently recomputed.
 
 ## Navigation
 
