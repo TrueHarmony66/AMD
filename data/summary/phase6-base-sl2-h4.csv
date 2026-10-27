@@ -1,0 +1,4 @@
+detector,stop,tp,initial_equity_usd,risk_pct,portfolio_position_limit,portfolio_trades,net_profit_usd,account_return_pct,modeled_net_pf,average_net_r,max_balance_drawdown_usd,ending_equity_usd,assumptions
+A,SL2,H4,5000,0.5,1,140,595.14,11.90,3.630,0.188,50.26,5595.14,"hypothetical commission and slippage; historical swap zero; incomplete pending order modeling"
+B,SL2,H4,5000,0.5,1,189,647.55,12.95,3.117,0.149,73.59,5647.55,"hypothetical commission and slippage; historical swap zero; incomplete pending order modeling"
+C,SL2,H4,5000,0.5,1,296,1284.03,25.68,3.200,0.174,101.08,6284.03,"hypothetical commission and slippage; historical swap zero; incomplete pending order modeling"

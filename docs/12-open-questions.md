@@ -1,5 +1,9 @@
 # Research roadmap, unresolved issues and release gates
 
+## Phase 6 status (27 October 2026)
+
+A cost-and-portfolio simulation was reported as completed from existing stop/target outcome ledgers (no tick rescan, MT5 or GSR work). The A/B/C SL2/H4, 0.5%-equity one-position **model-based** net results were respectively +$595.14, +$647.55, +$1,284.03. These results do **not** close the broker-cost and execution gates: swap was assumed zero, commission/slippage tariffs were hypothetical, true pending-order competition unavailable, 2023 data gaps remain and reported drawdown was balance-only. See [Phase 6 details](14-phase6-cost-portfolio.md).
+
 ## Highest priority: validate supplied backtest (do not tune parameters yet)
 
 1. **Audit missing 2023 quote coverage contradiction**: earlier Feb–Jul 2023 hole vs positive modeled outcomes; inspect monthly ZIP provenance and dates before treating all 59 months equally.
@@ -11,7 +15,7 @@
 
 ## Next: implementability, not number-chasing
 
-7. Recalculate commissions, broker stop slippage, swaps, uncertain spread conditions and spread spike sensitivity.
+7. Replace Phase 6 **hypothetical** commission/slippage and zero-swap assumptions with independently verifiable broker contract specs, historical long/short swap schedule or explicit swap sensitivity, adverse fill stress and spread spike sensitivity.
 8. Implement explicit single-position/maximum-concurrent risk, multiple FVGs per range, session rules, pending limit cancellation, weekend order policy and margin; report trade count and portfolio DD after overlaps removed.
 9. Compare H4-only, D1-only, nearest H4-or-D1 on exactly the same eligible TP-cohort with no lookahead and false target fills.
 10. Evaluate time exit horizon 12/24/48/72h and pending TTL choices **only as preplanned robustness studies**, not choose the best blindly from the same sample.

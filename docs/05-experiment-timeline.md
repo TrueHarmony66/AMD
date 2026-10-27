@@ -31,6 +31,7 @@ Every count refers to a particular experiment and should not be added to later t
 | TP definition | Trader confirmed exact H4 or D1 swing wick extreme | TP H4, D1, combined nearest; causal pivots required |
 | SL×TP provisional | 18 combinations, bid/ask ordered exits | Selected H4 SL2 PF A 4.209 B 3.610 C 3.612; zero commission, provisional TTL/holding |
 | Frequency | Uploaded monthly/yearly summaries independently parsed | C SL2/H4 **299 trades across 59 represented months**, mean 5.07, median 5, 0–12/month |
+| **Phase 6 (27 Oct 2026)** | Model costs, 0.5% dynamic equity-risk position sizing and single-position portfolios from existing SL/TP ledger | A 140, +$595.14, net PF 3.630; B 189, +$647.55, PF 3.117; C 296, +$1,284.03, PF 3.200. **Hypothetical commission/slippage, swap=0, no equity drawdown, incomplete pending competition, 2023 source gap.** |
 
 ## What went wrong and was fixed
 
