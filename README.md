@@ -1,1 +1,80 @@
-# AMD
+# AMD — Accumulation, Manipulation & Distribution / T1 Research
+
+A documented research project studying **GBPUSD H1 consolidation → close breakout → directional continuation → three-candle Fair Value Gap (FVG) → pending limit at the 50% gap midpoint**, using historical bid/ask quotes, H4/D1 structural context, and three frozen alternative range detectors.
+
+> **Research, not live-trading software or financial advice.** This repository records historical experimental evidence, provisional assumptions, defects uncovered, and unfinished validation. Positive gross backtests do **not** prove that any variant is robustly profitable after realistic costs or portfolio constraints.
+
+**Research status (27 October 2026):** all 1,099 corrected A/B/C eligible midpoint-order records were scanned against historical GBPUSD ticks; 717 recorded correct-side price reaches. A provisional stop-loss × higher-timeframe-liquidity-TP backtest produced positive gross H4/SL2 results for all three detectors, but uses a narrower usable-entry cohort, zero-commission reference, provisional order lifetime/holding assumptions, and independently simulated overlapping trades. Out-of-sample and live broker execution remain unproven.
+
+## Three detection variants
+
+| Variant | Philosophy | H1 range records | Corrected eligible orders | 12h FVG midpoint price reaches |
+|---|---|---:|---:|---:|
+| **A — canonical** | Original rule-based consolidation detector | 365 independent | 239 | 158 / 239 (66.1%) |
+| **B — extreme wicks** | Outer wick highs/lows plus chop; causal frozen boundaries | 2,322 raw; 600 representatives | 361 | 224 / 361 (62.0%) |
+| **C — defended levels** | Repeated reaction levels; isolated outlier wicks are sweeps, not automatically new boundaries | 1,705 H1; 819 H4 | 499 | 335 / 499 (67.1%) |
+
+The **current primary research variant is Detector C**; retain A and B as independently evaluated alternative branches, not discarded prototypes. 717 is a detector-associated count; some entry opportunities can overlap across detectors. None of the percentages is a trade win rate.
+
+## Navigation
+
+- [Research overview and provenance](docs/00-overview.md)
+- [Exact strategy and causal signal specification](docs/01-strategy-specification.md)
+- [Detector A/B/C internals and differences](docs/02-range-detectors.md)
+- [FVG geometry, quote-side fills and execution](docs/03-fvg-execution.md)
+- [Stop-loss, liquidity TP and provisional lifecycle](docs/04-sl-tp-management.md)
+- [Detailed chronological experimental log — Phase 1 to SL/TP](docs/05-experiment-timeline.md)
+- [Historical entry validation and reconciliations](docs/06-entry-results.md)
+- [Trade-management backtest results, full caveats](docs/07-sl-tp-results.md)
+- [Data, timestamping and source coverage](docs/08-data-provenance.md)
+- [Limitations, integrity flags and false conclusions to avoid](docs/09-limitations.md)
+- [Reproduction requirements and local artifact manifest](docs/10-reproduction.md)
+- [Mermaid diagrams and annotated manual chart interpretations](docs/11-diagrams-and-examples.md)
+- [Open research questions, release gates and next steps](docs/12-open-questions.md)
+- [Migration checklist: unpublished local source, charts and ledgers](docs/13-artifact-migration.md)
+- [Detector C SL2/H4 monthly trade counts, 2021-02 to 2025-12](data/summary/monthly-h4-sl2-trade-counts.csv)
+
+## Headline provisional 72h H4-liquidity results
+
+These are **backtest trades with valid stop + eligible target**, not all 717 midpoint reaches.
+
+| Detector | Stop | H4-TP trades | TP | SL | Avg realized R | PF | Reported max drawdown |
+|---|---|---:|---:|---:|---:|---:|---:|
+| A | SL1 midpoint between FVG edge and swing/sweep | 141 | 101 | 40 | +0.009 | 1.028 | −8.91R |
+| A | SL2 beyond swing/sweep + buffer | 141 | 132 | 9 | +0.210 | 4.209 | −2.00R |
+| B | SL1 | 190 | 142 | 48 | +0.037 | 1.128 | −14.09R |
+| B | SL2 | 189 | 177 | 12 | +0.169 | 3.610 | −2.81R |
+| C | SL1 | 301 | 200 | 101 | +0.000 | 1.001 | −27.96R |
+| C | SL2 | 299 | 277 | 22 | +0.195 | 3.612 | −3.76R |
+
+**Important:** SL2 is much wider, so a high TP-hit ratio does not imply large reward per unit risk. The historical H4/SL2 means are positive but not broker-cost-adjusted production expectancy; reported absence of time exits in these selected H4 rows warrants checking. Refer to [full caveats](docs/09-limitations.md).
+
+## Architecture at a glance
+
+~~~mermaid
+flowchart TD
+    T[HistData GBPUSD bid/ask ticks] --> C[Construct completed H1 / H4 / D1 candles]
+    C --> A[Detector A canonical]
+    C --> B[Detector B extreme-wick/chop]
+    C --> D[Detector C defended reaction levels]
+    A --> E[Shared causal close-breakout & Scenario A/B engine]
+    B --> E
+    D --> E
+    E --> F[Completed 3-candle FVG]
+    F --> G[50% FVG BUY/SELL LIMIT eligibility]
+    G --> H[Chronological historical bid/ask price-reach replay]
+    H --> I[SL1 and SL2 paired evaluation]
+    C --> J[Confirmed H4/D1 swing liquidity levels]
+    J --> K[H4 / D1 / nearest HTF wick TP]
+    I --> L[Paired chronological tick exits]
+    K --> L
+    L --> M[Trade ledger / R / PF / DD / monthly evidence]
+~~~
+
+## What is and is not in this repository
+
+This publication documents the strategy, design hypotheses, audits, diagrams, user-defined discretionary rules, historical reported metrics, source file inventory, and an independently reconstructed monthly-count table from CSVs supplied in the conversation. It **does not claim to contain the local Windows Python engines, raw 133-million-tick archive collection, Parquet order/trade ledgers, all chart screenshots, or every original phase report**. Those must be imported from the local research working tree before this becomes a completely reproducible code-and-data release. See [migration checklist](docs/13-artifact-migration.md).
+
+## Preservation policy
+
+Never silently modify or overwrite original Detector A/B/C baselines, legacy audit reports, corrected event IDs, or historical raw data. Version new rules and report changes as explicit experiments. Keep GSR and MT5 assets outside this project's scope. No secrets, credentials, account data or raw large tick ZIPs in Git history.
