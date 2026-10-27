@@ -1,0 +1,7 @@
+model,accepted,financially_complete,net_usd,profit_factor,net_win_rate_pct,avg_net_r,max_balance_drawdown_usd,d1_runner_tp,runner_sl,status
+M0,300,288,1340.29,3.401,86.11,0.1803,-109.40,0,0,provisional
+M1,300,288,1095.16,2.710,68.06,0.1469,-112.09,121,147,provisional
+M2,300,288,1241.50,3.097,79.86,0.1670,-111.10,92,176,provisional
+M3,300,288,1165.93,3.030,78.82,0.1568,-112.32,82,186,provisional
+M4,287,260,883.39,1.889,73.46,0.1249,-205.81,184,58,provisional
+M5,300,288,1095.16,2.710,68.06,0.1469,-112.09,121,147,provisional
