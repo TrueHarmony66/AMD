@@ -1,0 +1,30 @@
+# Raw historical market datasets and gigantic local archives
+*.zip
+*.7z
+*.rar
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.db
+*.sqlite
+# Local checkpoints unless specifically curated / redacted
+**/raw_ticks/
+**/histdata_ascii_tick/
+**/data/histdata_ascii_tick/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.set
+# Large test artifacts and machine-local state
+.cache/
+.pytest_cache/
+.DS_Store
+Thumbs.db
