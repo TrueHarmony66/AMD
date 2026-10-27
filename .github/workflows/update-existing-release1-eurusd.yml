@@ -1,0 +1,27 @@
+name: Update existing strongest candidate release 1
+
+on:
+  push:
+    branches:
+      - automation/update-release1-eurusd-2021
+
+permissions:
+  contents: write
+
+jobs:
+  update-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out updated release notes
+        uses: actions/checkout@v4
+      - name: Update existing release notes without changing tag
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: TrueHarmony66/AMD
+        run: |
+          set -euo pipefail
+          gh release view strongest-candidate --json tagName,name,isDraft
+          sed -E 's@\]\(([^/)]+\.md)\)@](https://github.com/TrueHarmony66/AMD/blob/main/docs/\1)@g' docs/22-strongest-candidate-release.md > /tmp/strongest-candidate-release.md
+          gh release edit strongest-candidate --title "strongest candidate" --notes-file /tmp/strongest-candidate-release.md
+          gh release view strongest-candidate --json tagName,name,isDraft,url
