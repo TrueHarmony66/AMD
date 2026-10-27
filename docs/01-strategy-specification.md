@@ -1,5 +1,7 @@
 # Strategy specification — AMD T1 range breakout / FVG midpoint
 
+**Illustrated examples:** [Defended ranges, bullish FVG and Scenario A/B diagrams](15-visual-diagram-gallery.md).
+
 ## 1. Price structure and confirmation
 
 On completed H1 candles, a detector emits a confirmed, frozen range [L, U] at a causally observable time. Detector-dependent range selection is the experimental variable. No future candle may define earlier boundaries or confirmation times.
