@@ -4,7 +4,7 @@ A documented research project studying **GBPUSD H1 consolidation → close break
 
 > **Research, not live-trading software or financial advice.** This repository records historical experimental evidence, provisional assumptions, defects uncovered, and unfinished validation. Positive gross backtests do **not** prove that any variant is robustly profitable after realistic costs or portfolio constraints.
 
-**Research status (27 October 2026):** all 1,099 corrected A/B/C eligible midpoint-order records were scanned against historical GBPUSD ticks; 717 recorded correct-side price reaches. A provisional stop-loss × higher-timeframe-liquidity-TP backtest produced positive gross H4/SL2 results for all three detectors, but uses a narrower usable-entry cohort, zero-commission reference, provisional order lifetime/holding assumptions, and independently simulated overlapping trades. Out-of-sample and live broker execution remain unproven.
+**Research status (27 October 2026):** all 1,099 corrected A/B/C midpoint-order records were scanned against historical GBPUSD ticks; 717 recorded correct-side price reaches. The subsequent SL×TP study found positive gross historical H4/SL2 results. **Phase 6** then simulated commissions, slippage, dynamic 0.5%-equity risk and one-position portfolios, reporting positive modeled net outcomes across A/B/C. However, swaps remain zero, commission/slippage are hypothetical, pending-order competition is incomplete, and the 2023 data gap is unresolved. Equity drawdown, broker-specific net returns, independent holdout and live performance are still unverified.
 
 ## Three detection variants
 
@@ -32,6 +32,8 @@ The **current primary research variant is Detector C**; retain A and B as indepe
 - [Mermaid diagrams and annotated manual chart interpretations](docs/11-diagrams-and-examples.md)
 - [Open research questions, release gates and next steps](docs/12-open-questions.md)
 - [Migration checklist: unpublished local source, charts and ledgers](docs/13-artifact-migration.md)
+- [**Phase 6: modeled transaction costs, sizing and one-position portfolio (October 2026)**](docs/14-phase6-cost-portfolio.md)
+- [Phase 6 base-cost A/B/C SL2/H4 summary CSV](data/summary/phase6-base-sl2-h4.csv)
 - [Detector C SL2/H4 monthly trade counts, 2021-02 to 2025-12](data/summary/monthly-h4-sl2-trade-counts.csv)
 
 ## Headline provisional 72h H4-liquidity results
@@ -48,6 +50,18 @@ These are **backtest trades with valid stop + eligible target**, not all 717 mid
 | C | SL2 | 299 | 277 | 22 | +0.195 | 3.612 | −3.76R |
 
 **Important:** SL2 is much wider, so a high TP-hit ratio does not imply large reward per unit risk. The historical H4/SL2 means are positive but not broker-cost-adjusted production expectancy; reported absence of time exits in these selected H4 rows warrants checking. Refer to [full caveats](docs/09-limitations.md).
+
+## Phase 6 — hypothetical cost-adjusted portfolio results (SL2 + H4 TP)
+
+Reported with a $5,000 initial USD account, 0.5% equity risk sizing and one-position mode. Commission and adverse execution slippage were modeled using **assumed** cost profiles; swaps were zero because broker history was unavailable.
+
+| Detector | Net portfolio trades | Net USD P&L | Account return | Modeled net PF | Average net R | **Balance** DD | Ending balance |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A | 140 | +$595.14 | +11.90% | 3.630 | +0.188 | $50.26 | $5,595.14 |
+| B | 189 | +$647.55 | +12.95% | 3.117 | +0.149 | $73.59 | $5,647.55 |
+| **C** | **296** | **+$1,284.03** | **+25.68%** | **3.200** | **+0.174** | **$101.08** | **$6,284.03** |
+
+**These are conditional historical simulations, not verified realized returns**: zero swap, no true broker cost schedule, mark-to-market equity drawdown not reported, one-position filtering applied only to completed-entry opportunities, and unresolved 2023 quote-source gap. Full context: [Phase 6 report](docs/14-phase6-cost-portfolio.md).
 
 ## Architecture at a glance
 
